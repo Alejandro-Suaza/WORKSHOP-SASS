@@ -1,0 +1,36 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+form {
+    width: 100%;
+    
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        font-family: $font-family;  
+        color: $secondary-color;
+    }
+}
+
+.form-group {
+    @include form-group;
+}
+
+input[type="email"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid $secondary-color;
+  border-radius: calculate-border-radius(4px);
+  font-family: $font-family;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: $light-color;
+  transition: background-color 0.3s, color 0.3s;
+  
+  &:hover {
+    background-color: $light-color;
+    color: $primary-color;
+  }
+}
